@@ -19,6 +19,7 @@ class Resume(Base):
     education=Column(Text)
     experience=Column(Text)
     summary=Column(Text)
+    projects=Column(Text)
     uploaded_at=Column(DateTime,default=datetime.now())
     is_active=Column(Boolean)
 
@@ -47,6 +48,7 @@ class DatabaseManager:
             education=resume_details.get("education"),
             experience=resume_details.get("experience"),
             summary=resume_details.get("summary"),
+            projects=resume_details.get("projects"),
             uploaded_at=resume_details.get("uploaded_at"),
             is_active=True
             )
@@ -54,6 +56,7 @@ class DatabaseManager:
             self.session.query(Resume).update({Resume.is_active: False})
             self.session.add(new_resume)
             self.session.commit()
+            print("Resume successfully added.")
         except Exception as e:
             print("Commit for adding a new resume UNSUCCESSFUL: \n", e)
             self.session.rollback()

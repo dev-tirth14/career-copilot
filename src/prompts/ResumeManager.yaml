@@ -1,0 +1,235 @@
+resume_extraction: |
+  You are an expert resume parser with deep understanding of professional documents and data validation. Your task is to extract and validate structured information from the resume text below.
+  
+  RESUME TEXT:
+  {resume_text}
+  
+  EXTRACTION REQUIREMENTS:
+  
+  1. NAME
+     - Extract the candidate's full name (typically at the top of the resume)
+     - Clean up any formatting issues (remove extra spaces, special characters)
+     - Return empty string if not found
+  
+  2. EMAIL
+     - Extract email address
+     - VALIDATE: Must match standard email format (user@domain.extension)
+     - If multiple emails found, extract the primary/first one
+     - Clean up any spaces or formatting issues
+     - Return empty string if no valid email found
+  
+  3. PHONE
+     - Extract phone number in any format
+     - Normalize to a consistent format: +1-XXX-XXX-XXXX or (XXX) XXX-XXXX
+     - Remove invalid characters, keep only numbers and standard separators
+     - Return empty string if not found
+  
+  4. SUMMARY
+     - Extract professional summary, objective, or about section
+     - If no explicit section exists, create a compelling 2-3 sentence summary based on:
+       * Years of experience (calculate from work history if needed)
+       * Key expertise areas and technical strengths
+       * Career focus and notable achievements
+     - Make it concise, professional, and highlight the candidate's unique value
+     - Return empty string only if resume has insufficient information
+  
+  5. SKILLS
+     - Extract ALL technical and professional skills mentioned ANYWHERE in the resume
+     - Search in:
+       * Explicit "Skills" or "Technical Skills" sections
+       * Job descriptions (e.g., "developed microservices using Docker" → include Docker, microservices)
+       * Project descriptions and achievements
+       * Tools, technologies, platforms, and frameworks mentioned
+       * Certifications and training
+     - Include:
+       * Programming languages (Python, JavaScript, Java, etc.)
+       * Frameworks and libraries (React, Django, TensorFlow, etc.)
+       * Tools and platforms (Git, AWS, Docker, Kubernetes, etc.)
+       * Databases (PostgreSQL, MongoDB, Redis, etc.)
+       * Methodologies (Agile, Scrum, CI/CD, etc.)
+       * Soft skills if explicitly mentioned (leadership, communication, etc.)
+     - Format: comma-separated values
+     - Remove duplicates and standardize naming (e.g., "React.js" → "React")
+     - Be comprehensive - this is critical for job matching
+  
+  6. EXPERIENCE
+     - Extract ONLY formal work experience (employment history)
+     - For each position include:
+       * Job title
+       * Company name
+       * Employment dates (format: "Month Year - Month Year" or "Month Year - Present")
+       * Location (city, state/country) if available
+       * Key responsibilities and achievements (as bullet points)
+     - Structure each entry clearly with proper line breaks
+     - List in reverse chronological order (most recent first)
+     - Include internships and co-op positions
+     - DO NOT include personal projects, academic projects, or freelance work here
+     - Return empty string if no formal work experience exists
+  
+  7. PROJECTS
+     - Extract personal projects, academic projects, freelance work, and significant side projects
+     - For each project include:
+       * Project name/title
+       * Date or timeframe (if available)
+       * Brief description of the project
+       * Technologies used
+       * Key outcomes or achievements (if mentioned)
+     - Structure each entry clearly with proper line breaks
+     - This should be separate from work experience
+     - Return empty string if no projects are mentioned
+  
+  8. EDUCATION
+     - Extract all educational background
+     - For each entry include:
+       * Degree/certification name
+       * Institution/school name
+       * Graduation date or expected graduation date
+       * GPA (only if 3.0 or above and if mentioned)
+       * Relevant coursework (if mentioned)
+       * Academic honors or achievements
+     - Include professional certifications and training programs
+     - List in reverse chronological order
+     - Return empty string if not found
+  
+  VALIDATION RULES:
+  - Email: Must contain @ symbol and valid domain (e.g., .com, .edu, .org)
+  - Phone: Must contain at least 10 digits
+  - Dates: Standardize format to "Month Year" (e.g., "January 2020")
+  - Names: Capitalize appropriately, remove titles like "Resume of" or "CV -"
+  - Skills: Remove duplicates, standardize capitalization (e.g., "python" → "Python")
+  - Remove any artifacts like "References available upon request" or page numbers
+  
+  OUTPUT FORMAT:
+  Return your response as a valid JSON object with exactly these keys:
+  {{
+    "name": "extracted and cleaned name or empty string",
+    "email": "validated email or empty string",
+    "phone": "normalized phone number or empty string",
+    "summary": "extracted or generated summary or empty string",
+    "skills": "comma-separated skills (deduplicated and standardized) or empty string",
+    "experience": "formatted work history with proper structure or empty string",
+    "projects": "formatted projects with proper structure or empty string",
+    "education": "formatted education with proper structure or empty string"
+  }}
+  
+  CRITICAL RULES:
+  - Return ONLY the JSON object, no explanations, no markdown code blocks, no additional text before or after
+  - All values must be strings (use empty string "" for missing data, never use null)
+  - Validate data format for email and phone before including them
+  - For skills, be exhaustive - extract every technology, tool, and skill mentioned
+  - Separate work experience from projects - do not mix them
+  - Preserve line breaks using \n in experience, projects, and education for readability
+  - If you're unsure about a field, make your best inference based on context
+  - Do not add information that isn't present in the resume
+  - Do not include filler text like "Not specified" - use empty string instead
+  - Double-check that your output is valid JSON that can be parsed
+  
+  Now extract and validate the information from the resume above and return the JSON object:
+
+basic_resume_extraction: |
+  Extract information from the resume and return ONLY valid JSON.
+  
+  RESUME TEXT:
+  {resume_text}
+  
+  CRITICAL: Your response must be VALID JSON following these rules:
+  1. ALL keys must be enclosed in double quotes: {{"name": not {{name:
+  2. ALL string values must be enclosed in double quotes
+  3. Use double quotes (") not single quotes (')
+  4. Start response with {{ and end with }}
+  5. No text before or after the JSON
+  6. No markdown code blocks
+  
+  INVALID JSON EXAMPLE (DO NOT DO THIS):
+  {{name: "value", email: "value"}}  ← WRONG: keys not quoted
+  
+  VALID JSON EXAMPLE (DO THIS):
+  {{"name": "value", "email": "value"}}  ← CORRECT: keys in quotes
+  
+  ====================================
+  EXTRACTION INSTRUCTIONS:
+  ====================================
+  
+  NAME: Extract full name from resume top
+  
+  EMAIL: Extract email only (no URLs)
+  
+  PHONE_NUMBER: Extract phone number
+  
+  SUMMARY: Create 2-3 specific sentences about experience and skills if no summary exists
+  Example: "AI/ML Software Developer with 5 years of experience building LLM-powered applications, conversational AI, and MLOps pipelines. Expertise in Python, Go, RAG systems, vector databases, and cloud infrastructure. Currently architecting enterprise AI solutions at IBM."
+  
+  SKILLS: Extract ALL skills and organize with this EXACT format:
+  "Languages: Python, Go, JavaScript; AI/ML: LLMs, RAG, Langchain; Databases: PostgreSQL, MongoDB; Frameworks: React, FastAPI; Tools: Docker, Git"
+  - Use COLONS after category names (Languages: not Languages;)
+  - Use SEMICOLONS between categories
+  - Use COMMAS between items in a category
+  
+  EXPERIENCE: Extract ONLY work jobs (not projects). Format each job as:
+  "POSITION: Title\\nCOMPANY: Name\\nLOCATION: City, State\\nDATES: Start - End\\nRESPONSIBILITIES:\\n• bullet\\n• bullet\\n\\nPOSITION: Next Job..."
+  - Use \\n for line breaks (backslash + n, not actual line break)
+  - Do NOT include projects here
+  - Extract ALL bullet points completely
+  
+  PROJECTS: Extract ONLY personal/side projects (not work jobs). Format as:
+  "PROJECT: Name\\nDESCRIPTION: desc\\nTECHNOLOGIES: tech1, tech2\\nLINK: url\\n\\nPROJECT: Next..."
+  - Use \\n for line breaks
+  - Do NOT duplicate with experience field
+  
+  EDUCATION: Extract education section. Format as:
+  "Degree | Institution | Years"
+  Example: "BSc (Hons), Computer Science Co-op | Ontario Tech University | 2018 - 2023"
+  - This resume HAS education - you must extract it
+  - Do NOT put education in experience field
+  - Do NOT return empty string if education exists
+  
+  ====================================
+  REQUIRED JSON STRUCTURE:
+  ====================================
+  
+  {{"name": "string", "email": "string", "phone_number": "string", "summary": "string", "skills": "string", "experience": "string", "projects": "string", "education": "string"}}
+  
+  ALL EIGHT FIELDS REQUIRED. ALL KEYS IN DOUBLE QUOTES. ALL VALUES IN DOUBLE QUOTES.
+  
+  ====================================
+  COMMON ERRORS TO AVOID:
+  ====================================
+  
+  ERROR 1: Keys not in quotes
+  WRONG: {{name: "Tirth"}}
+  RIGHT: {{"name": "Tirth"}}
+  
+  ERROR 2: Education field empty when it exists
+  WRONG: "education": ""
+  RIGHT: "education": "BSc (Hons), Computer Science Co-op | Ontario Tech University | 2018 - 2023"
+  
+  ERROR 3: Projects in experience field
+  WRONG: Include projects in experience string
+  RIGHT: Keep work jobs in experience, personal projects in projects field separately
+  
+  ERROR 4: Wrong skill separators
+  WRONG: "skills": "Languages; Python"
+  RIGHT: "skills": "Languages: Python, Go; AI/ML: LLMs, RAG"
+  
+  ERROR 5: Actual line breaks in strings
+  WRONG: "experience": "POSITION: Engineer
+  COMPANY: IBM"
+  RIGHT: "experience": "POSITION: Engineer\\nCOMPANY: IBM"
+  
+  ====================================
+  EXTRACTION CHECKLIST:
+  ====================================
+  
+  Before responding, verify:
+  - Are ALL keys enclosed in double quotes?
+  - Are ALL values enclosed in double quotes?
+  - Did I extract education? (This resume has education)
+  - Did I separate work jobs (experience) from personal projects (projects)?
+  - Did I use correct separators in skills (colons after categories)?
+  - Did I use \\n for line breaks (not actual line breaks)?
+  - Does my JSON start with {{ and end with }}?
+  - Is there no text before or after the JSON?
+  
+  ====================================
+  NOW RETURN ONLY THE VALID JSON:
+  ====================================
