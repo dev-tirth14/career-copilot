@@ -1,0 +1,13 @@
+# Resume file parsing
+pypdf2==3.0.1
+python-docx==1.1.0
+
+# Database
+sqlalchemy==2.0.35
+
+# LLM for intelligent parsing
+langchain==0.3.1
+langchain-community==0.3.1
+
+# Utilities
+python-dotenv==1.0.1
