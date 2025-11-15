@@ -1,0 +1,58 @@
+job_extraction: |
+  You are an expert job posting analyzer. Extract specific information from the raw job posting below.
+
+  RAW JOB POSTING:
+  {job_content}
+
+  EXTRACT THESE THREE FIELDS:
+
+  1. DESCRIPTION
+     - Create a concise summary (3-5 sentences) of what the role involves
+     - Focus on: main responsibilities, team/department, business impact
+     - Include the business context (what product/service/domain the team supports)
+     - Mention the type of problems they solve (e.g., search optimization, NLP, forecasting)
+     - Do NOT just list bullet points - synthesize into a coherent summary
+     - Ignore: company marketing, benefits, perks, equal opportunity statements, application instructions
+
+  2. REQUIREMENTS
+     - Extract ALL technical and professional requirements as a comma-separated list
+     - MUST include (if mentioned):
+       * Education: degrees, fields of study (e.g., "Bachelor's in Computer Science", "Master's in Mathematics")
+       * Experience: years required (e.g., "3+ years experience", "5+ years in ML")
+       * Programming languages: Python, Java, Scala, SQL, R, etc.
+       * ML/AI frameworks: TensorFlow, PyTorch, Keras, scikit-learn, XGBoost, LightGBM
+       * Data tools: Spark, Pandas, Numpy, Hadoop, Airflow, Kafka
+       * Cloud platforms: GCP, AWS, Azure, Vertex AI, BigQuery, SageMaker
+       * AI/ML skills: NLP, Deep Learning, Computer Vision, RAG, LLMs, Transformers, Embeddings
+       * Databases: SQL, NoSQL, Vector databases, PostgreSQL, MongoDB
+       * DevOps/MLOps: Git, Docker, Kubernetes, CI/CD, MLflow
+       * Soft skills: communication, collaboration, problem-solving (if emphasized)
+     - Include BOTH required AND nice-to-have/preferred qualifications
+     - Extract skills mentioned in job duties too (e.g., "build RAG pipelines" means RAG is required)
+     - Be EXHAUSTIVE - this is critical for job matching accuracy
+     - Separate items with commas, no bullet points
+
+  3. KEY_TECHNOLOGIES
+     - Extract the TOP 10 most critical technologies for this specific role
+     - Prioritize: primary programming language, main ML framework, cloud platform, specialized tools
+     - These are the "must-have" skills that define the role
+     - Order by importance (most important first)
+     - Comma-separated list
+
+  OUTPUT FORMAT:
+  Return a complete, valid JSON object. Must start with {{ and end with }}.
+
+  EXACTLY this structure:
+  {{"description": "your summary here", "requirements": "comprehensive comma-separated list here", "key_technologies": "top 10 technologies here"}}
+
+  CRITICAL RULES:
+  - Return ONLY the JSON object - no other text
+  - Must be valid JSON parseable by Python's json.loads()
+  - All three fields are REQUIRED - use empty string "" only if truly no information
+  - No markdown code blocks (no ```)
+  - No line breaks inside string values
+  - No trailing commas
+  - MUST include closing brace }}
+  - Double-check completeness before responding
+
+  Your complete JSON response:

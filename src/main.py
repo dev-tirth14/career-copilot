@@ -1,5 +1,7 @@
 from .database.models import DatabaseManager
 from .agents.ResumeManager import ResumeManager
+from .agents.JobsManager import JobsManager
+from .tools.LinkedInScraper import LinkedInScraper
 from .utils.config import Config
 from pathlib import Path
 # db_manager=DatabaseManager()
@@ -20,7 +22,15 @@ from pathlib import Path
 
 # db_manager.close_connection()
 
-resume_manager=ResumeManager()
-Path("data/resumes/john_resume.pdf")
-file_path=Config.DATA_DIR.joinpath("resumes","resume_2025.pdf")
-resume_manager.process_resume(file_path=file_path)
+# resume_manager=ResumeManager()
+# Path("data/resumes/john_resume.pdf")
+# file_path=Config.DATA_DIR.joinpath("resumes","resume_2025.pdf")
+# resume_manager.process_resume(file_path=file_path)
+
+
+job_manager=JobsManager()
+job_manager.scrape_all_jobs()
+job_manager.get_scraped_jobs()
+
+# scraper=LinkedInScraper()
+# scraper.scrapeJobs()
