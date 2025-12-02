@@ -1,0 +1,75 @@
+skill_name: "LLMs (Large Language Models)"
+
+definition: |
+  Large Language Models are neural networks trained on vast text corpora to understand 
+  and generate human language. Modern LLMs (like GPT-4, Claude, Llama) power conversational 
+  AI, code generation, analysis, and reasoning tasks. Working with LLMs involves prompt 
+  engineering, API integration, fine-tuning, evaluation, and building applications that 
+  leverage their language understanding and generation capabilities. Core to modern AI 
+  product development.
+
+resume_manifestations:
+  - "Built LLM-powered conversational assistant for enterprise users"
+  - "Integrated OpenAI and Anthropic APIs for production applications"
+  - "Developed LLM-driven automation workflows and intelligent agents"
+  - "Implemented prompt engineering strategies for consistent LLM outputs"
+  - "Built applications leveraging GPT-4, Claude, and open-source LLMs"
+  - "Architected LLM observability infrastructure for performance monitoring"
+  - "Developed LLM evaluation pipelines for model selection and quality assurance"
+  - "Created multi-LLM routing system optimizing for cost and latency"
+  - "Implemented fine-tuning pipelines for domain-specific LLM adaptation"
+  - "Built LLM-based text generation, analysis, and extraction systems"
+  - "Designed prompt templates and chains for complex LLM workflows"
+  - "Integrated local LLMs (Llama, Mistral) for privacy-sensitive applications"
+
+specific_tools:
+  - OpenAI API (GPT-4, GPT-3.5)
+  - Anthropic Claude
+  - Llama 2/3
+  - Mistral
+  - Gemini
+  - LangChain
+  - LlamaIndex
+  - Ollama
+  - HuggingFace Transformers
+  - vLLM
+  - Text Generation Inference
+
+related_skills:
+  - Prompt engineering
+  - API integration
+  - Fine-tuning
+  - Model evaluation
+  - Token optimization
+  - Agents
+  - RAG
+  - Function calling
+
+indicators:
+  - "LLM"
+  - "large language model"
+  - "GPT"
+  - "Claude"
+  - "language model"
+  - "generative AI"
+  - "OpenAI"
+  - "Anthropic"
+  - "natural language"
+  - "text generation"
+
+category: "AI/ML Core"
+
+use_cases:
+  - Conversational AI and chatbots
+  - Code generation and assistance
+  - Text analysis and extraction
+  - Content generation
+  - Document summarization
+  - Question answering
+  - Translation and localization
+  - Sentiment analysis
+
+skill_level_indicators:
+  junior: "Integrated LLM APIs for basic text generation and analysis"
+  mid: "Built production LLM applications with prompt optimization and error handling"
+  senior: "Architected complex LLM systems with evaluation, observability, and optimization"

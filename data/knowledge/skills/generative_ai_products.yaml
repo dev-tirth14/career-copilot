@@ -1,0 +1,72 @@
+skill_name: "Generative AI Products"
+
+definition: |
+  Production applications that leverage generative AI (particularly LLMs) to create 
+  content, assist users, or automate workflows. These are end-to-end AI products with 
+  user interfaces, backend systems, and production deployment. Examples include chatbots, 
+  AI assistants, code copilots, content generators, and intelligent automation tools. 
+  Building generative AI products requires combining LLMs, prompt engineering, RAG, 
+  user experience design, and production engineering.
+
+resume_manifestations:
+  - "Built conversational assistant enabling users to query data through natural language"
+  - "Developed AI-powered copilot for enterprise workflow automation"
+  - "Created generative AI product for document analysis and summarization"
+  - "Built production chatbot serving thousands of daily users"
+  - "Architected AI assistant with multi-turn conversation and memory"
+  - "Developed LLM-powered code generation and explanation tool"
+  - "Built content generation platform using GPT-4 and Claude"
+  - "Created AI-driven research assistant with citation and source verification"
+  - "Developed intelligent form-filling assistant using generative AI"
+  - "Built customer support automation with AI-powered responses"
+  - "Created AI writing assistant with style adaptation and editing"
+  - "Developed generative AI features for existing product suite"
+
+specific_tools:
+  - OpenAI API
+  - Anthropic Claude
+  - LangChain
+  - Streamlit / Gradio
+  - FastAPI
+  - Next.js / React
+  - Vercel AI SDK
+  - LlamaIndex
+  - Vector databases
+
+related_skills:
+  - LLMs
+  - Product development
+  - User experience design
+  - Backend development
+  - Prompt engineering
+  - RAG
+  - API design
+  - Production deployment
+
+indicators:
+  - "conversational assistant"
+  - "AI assistant"
+  - "chatbot"
+  - "copilot"
+  - "AI-powered"
+  - "LLM-powered"
+  - "generative AI"
+  - "AI product"
+  - "intelligent automation"
+  - "natural language interface"
+
+category: "Product Development"
+
+use_cases:
+  - Customer support chatbots
+  - Internal knowledge assistants
+  - Code generation copilots
+  - Content creation tools
+  - Research assistants
+  - Document processing automation
+  - Conversational interfaces
+
+skill_level_indicators:
+  junior: "Built basic AI chatbot using existing templates and APIs"
+  mid: "Developed production AI products with custom features and integration"
+  senior: "Architected and shipped large-scale generative AI products serving many users"

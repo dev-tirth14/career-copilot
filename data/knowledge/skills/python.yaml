@@ -1,0 +1,70 @@
+skill_name: "Python"
+
+definition: |
+  High-level programming language dominant in AI/ML, data science, and backend development. 
+  Python's extensive ecosystem (NumPy, Pandas, PyTorch, TensorFlow, FastAPI) makes it the 
+  primary choice for machine learning and AI applications. Proficiency includes understanding 
+  of core language features, async programming, object-oriented design, package management, 
+  testing, and Python-specific patterns and best practices.
+
+resume_manifestations:
+  - "Developed production Python applications for ML and data processing"
+  - "Built backend services and APIs using Python and FastAPI"
+  - "Implemented ML pipelines in Python with NumPy, Pandas, and scikit-learn"
+  - "Created Python automation scripts for workflow optimization"
+  - "Developed async Python services for high-throughput applications"
+  - "Built data processing pipelines using Python and Apache Spark"
+  - "Implemented testing frameworks with pytest for Python applications"
+  - "Created Python packages and libraries for internal use"
+  - "Developed LLM applications using Python and LangChain"
+  - "Built ETL pipelines in Python for data transformation"
+  - "Implemented object-oriented design patterns in Python"
+  - "Developed CLI tools and automation scripts with Python"
+
+specific_tools:
+  - Python 3.9+
+  - NumPy
+  - Pandas
+  - PyTorch
+  - TensorFlow
+  - scikit-learn
+  - FastAPI
+  - Flask
+  - SQLAlchemy
+  - Pydantic
+  - asyncio
+  - pytest
+
+related_skills:
+  - Object-oriented programming
+  - Async programming
+  - Data structures
+  - Testing
+  - Package management (pip, poetry)
+  - Virtual environments
+  - Type hints
+  - Design patterns
+
+indicators:
+  - "Python"
+  - "Python 3"
+  - "Pythonic"
+  - "py"
+  - "async Python"
+  - "Python development"
+
+category: "Programming Languages"
+
+use_cases:
+  - Machine learning and AI
+  - Backend APIs and services
+  - Data processing and analysis
+  - Automation and scripting
+  - Web scraping
+  - Scientific computing
+  - DevOps tooling
+
+skill_level_indicators:
+  junior: "Wrote Python scripts for basic automation and data processing"
+  mid: "Developed production Python applications with OOP, testing, and best practices"
+  senior: "Architected complex Python systems with advanced patterns and optimization"

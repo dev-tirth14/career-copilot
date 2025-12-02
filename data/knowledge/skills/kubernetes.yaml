@@ -1,0 +1,70 @@
+skill_name: "Kubernetes"
+
+definition: |
+  Open-source container orchestration platform for automating deployment, scaling, and 
+  management of containerized applications. Kubernetes (K8s) is the industry standard for 
+  running containers in production, providing features like auto-scaling, self-healing, 
+  service discovery, and load balancing. Essential for microservices, ML model serving, 
+  and cloud-native applications at scale.
+
+resume_manifestations:
+  - "Deployed applications to Kubernetes clusters on AWS EKS"
+  - "Built Kubernetes manifests for microservices deployment"
+  - "Implemented auto-scaling and load balancing with Kubernetes"
+  - "Managed Kubernetes clusters with kubectl and Helm"
+  - "Deployed ML models to Kubernetes for production serving"
+  - "Implemented GitOps workflows with ArgoCD and Kubernetes"
+  - "Created Kubernetes operators for custom resource management"
+  - "Implemented monitoring and logging for Kubernetes with Prometheus"
+  - "Developed CI/CD pipelines deploying to Kubernetes"
+  - "Managed Kubernetes secrets and ConfigMaps for configuration"
+  - "Implemented service mesh with Istio on Kubernetes"
+  - "Built multi-tenant Kubernetes infrastructure with namespaces"
+
+specific_tools:
+  - Kubernetes (K8s)
+  - kubectl
+  - Helm
+  - ArgoCD
+  - EKS / GKE / AKS
+  - OpenShift
+  - Prometheus
+  - Grafana
+  - Istio
+  - Kustomize
+
+related_skills:
+  - Docker
+  - Container orchestration
+  - DevOps
+  - Cloud platforms
+  - Microservices
+  - YAML
+  - CI/CD
+  - Monitoring
+
+indicators:
+  - "Kubernetes"
+  - "K8s"
+  - "kubectl"
+  - "Helm"
+  - "container orchestration"
+  - "EKS"
+  - "GKE"
+  - "OpenShift"
+
+category: "DevOps/Infrastructure"
+
+use_cases:
+  - Microservices deployment
+  - ML model serving
+  - Auto-scaling applications
+  - High-availability systems
+  - Multi-tenant platforms
+  - Cloud-native applications
+  - Container management
+
+skill_level_indicators:
+  junior: "Deployed applications to existing Kubernetes clusters"
+  mid: "Managed Kubernetes clusters and wrote deployment manifests"
+  senior: "Architected Kubernetes infrastructure with operators and advanced features"

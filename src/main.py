@@ -1,36 +1,46 @@
-from .database.models import DatabaseManager
-from .agents.ResumeManager import ResumeManager
-from .agents.JobsManager import JobsManager
-from .tools.LinkedInScraper import LinkedInScraper
-from .utils.config import Config
+"""
+Career Copilot - AI-powered job matching system
+Main entry point for the application
+"""
+
+from .services.resume_service import ResumeManager
+from .services.job_service import JobsManager
+from .core.matching.agent import MatchingAgent
+from .config.settings import Config
 from pathlib import Path
-# db_manager=DatabaseManager()
-# sample_resume={
-#     "raw_text":"",
-#     "name":"Tirth Patel",
-#     "email":"dev.tirthp14@gmail.com",
-#     "phone_number":"6475337957",
-#     "skills":"Python, SQL",
-#     "education":"BSc from Ontario Tech University",
-#     "experience":"2 years at IBM as an Associate Software Developer",
-#     "summary":"I want to work in Faang"
-# }
-# db_manager.add_resume(sample_resume)
-
-# resumes=db_manager.get_all_resumes()
-# print(resumes[0].id)
-
-# db_manager.close_connection()
-
-# resume_manager=ResumeManager()
-# Path("data/resumes/john_resume.pdf")
-# file_path=Config.DATA_DIR.joinpath("resumes","resume_2025.pdf")
-# resume_manager.process_resume(file_path=file_path)
 
 
-job_manager=JobsManager()
-job_manager.scrape_all_jobs()
-job_manager.get_scraped_jobs()
+def main():
+    """Main application entry point"""
 
-# scraper=LinkedInScraper()
-# scraper.scrapeJobs()
+    # Initialize services
+    # resume_manager = ResumeManager()
+    job_manager = JobsManager()
+    # jobs=job_manager.get_scraped_jobs()
+    # for job in jobs:
+    #     print(job.url)
+    #     print(job.description)
+    #     print(job.key_technologies)
+    #     print(job.requirements)
+        # print("-"*40)
+    # resume_manager.process_resume(file_path=Config.DATA_DIR.joinpath("resumes", "resume_2025.pdf"))
+    job_manager.scrape_all_jobs()
+
+    matcher = MatchingAgent()
+
+    # Get active resume
+    # Uncomment to process a new resume:
+    # from .config.settings import Config
+    # resume_manager.process_resume(Config.DATA_DIR.joinpath("resumes", "resume_2025.pdf"))
+
+    # Scrape and process jobs
+    # Uncomment to scrape new jobs:
+    # job_manager.scrape_all_jobs()
+
+    # Match jobs with resume
+    # results = matcher.match_all_jobs()
+
+
+
+if __name__ == "__main__":
+    main()

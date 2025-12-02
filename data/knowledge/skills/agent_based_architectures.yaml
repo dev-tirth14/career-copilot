@@ -1,0 +1,71 @@
+skill_name: "Agent-Based Architectures"
+
+definition: |
+  Software systems where autonomous agents perform tasks, make decisions, and interact 
+  with their environment or other agents. Modern agent-based architectures are prevalent 
+  in AI systems where different components (agents) coordinate to solve complex problems. 
+  Agents typically have goals, perception capabilities, decision-making logic, and ability 
+  to take actions. Common in AI assistants, automated workflows, and intelligent systems 
+  that require planning, tool use, and multi-step reasoning.
+
+resume_manifestations:
+  - "Engineered proactive diagnostic agents powered by LLM-driven root cause analysis"
+  - "Built diagnostic agents that analyze system performance autonomously"
+  - "Developed multi-agent system for workflow orchestration"
+  - "Implemented autonomous agents for data processing and decision-making"
+  - "Created agent-based architecture for distributed task execution"
+  - "Designed agentic framework enabling tool use and reasoning"
+  - "Built conversational agents that interact with users through natural language"
+  - "Architected agent orchestration layer for AI workflows"
+  - "Developed intelligent agents with planning and execution capabilities"
+  - "Implemented LLM agents with function calling and tool integration"
+  - "Built multi-agent collaboration system for complex problem solving"
+  - "Created autonomous agent infrastructure for enterprise automation"
+
+specific_tools:
+  - LangChain Agents
+  - LangGraph
+  - AutoGPT
+  - CrewAI
+  - Semantic Kernel
+  - OpenAI Assistants API
+  - Anthropic Claude with tools
+  - Custom agent frameworks
+
+related_skills:
+  - LLMs
+  - Tool use / Function calling
+  - Orchestration
+  - State management
+  - Planning algorithms
+  - Async programming
+  - Multi-agent coordination
+
+indicators:
+  - "agent"
+  - "agents"
+  - "autonomous"
+  - "multi-agent"
+  - "agentic"
+  - "orchestration"
+  - "tool-using"
+  - "planning"
+  - "reasoning loop"
+  - "agent-based"
+  - "intelligent agent"
+
+category: "AI/ML Architecture"
+
+use_cases:
+  - AI assistants and copilots
+  - Workflow automation
+  - Complex decision-making systems
+  - Distributed task execution
+  - Interactive AI applications
+  - Enterprise automation
+  - Diagnostic and monitoring systems
+
+skill_level_indicators:
+  junior: "Used agent frameworks like LangChain for basic automation"
+  mid: "Built custom agents with tool use, planning, and error handling"
+  senior: "Architected multi-agent systems with orchestration and coordination"

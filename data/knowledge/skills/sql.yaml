@@ -1,0 +1,34 @@
+skill_name: "SQL"
+
+definition: |
+  Structured Query Language for managing and querying relational databases. SQL is 
+  fundamental for data analysis, backend development, and data engineering. Includes 
+  writing complex queries, optimizing performance, designing schemas, and understanding 
+  database internals like indexes, transactions, and query plans.
+
+resume_manifestations:
+  - "Wrote complex SQL queries for data analysis and reporting"
+  - "Optimized SQL queries for performance improvements"
+  - "Designed database schemas with normalization"
+  - "Developed stored procedures and triggers"
+  - "Built ETL pipelines with SQL transformations"
+  - "Created database views and materialized views"
+  - "Implemented SQL-based analytics and aggregations"
+
+specific_tools:
+  - PostgreSQL
+  - MySQL
+  - SQL Server
+  - SQLite
+  - BigQuery
+  - Redshift
+
+related_skills:
+  - Databases
+  - Data modeling
+  - Query optimization
+  - Data analysis
+  - ETL
+  - Backend development
+
+category: "Databases"

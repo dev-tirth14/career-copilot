@@ -1,6 +1,7 @@
-from ..database.models import DatabaseManager
-from ..tools.ResumeParser import ResumeParser
-from ..utils.config import Config
+from ..models.database import DatabaseManager
+from ..models.entities import Resume
+from ..parsers.resume import ResumeParser
+from ..config.settings import Config
 from pathlib import Path
 from langchain.chains.llm import LLMChain
 from langchain_core.prompts import PromptTemplate
@@ -15,22 +16,25 @@ class ResumeManager:
         self.db_manager=DatabaseManager()
         self.llm = Ollama(model="llama3.2")
 
-        prompts_file=Config.PROMPT_DIR.joinpath("ResumeManager.yaml")
+        prompts_file=Config.PROMPT_DIR.joinpath("resume.yaml")
         if(not prompts_file.exists()):
             raise Exception("ResumeManager prompt file foes not exist")
         with open(prompts_file, 'r') as file:
             self.prompts = yaml.safe_load(file)
         
     def process_resume(self, file_path:Path):
-        parsed_resume=self.parser.parse_resume(file_path=file_path)
+        parsed_resume=self.parser.extract_resume(file_path=file_path)
 
         resume_details=self.llm_parse(parsed_resume.raw_text)
+
+        print(json.dumps(resume_details, indent=4))
 
         self.db_manager.add_resume(resume_details=resume_details)
 
         name=self.db_manager.get_all_resumes()[0].name
-        print(name)
     
+    def get_active_resume(self) -> Resume:
+        return self.db_manager.get_active_resume()
 
     def llm_parse(self, resume_text:str):
         prompt=PromptTemplate.from_template(self.prompts.get("basic_resume_extraction")).format(resume_text=resume_text)

@@ -1,0 +1,65 @@
+skill_name: "Docker"
+
+definition: |
+  Containerization platform for packaging applications with their dependencies into 
+  portable, isolated containers. Docker enables consistent deployment across environments, 
+  simplifies dependency management, and is foundational for microservices, CI/CD pipelines, 
+  and cloud deployment. Essential for modern software development and deployment, 
+  particularly for ML/AI applications that require specific environments and dependencies.
+
+resume_manifestations:
+  - "Containerized applications using Docker for consistent deployment"
+  - "Built Docker images for ML models and microservices"
+  - "Developed multi-stage Docker builds for optimized image size"
+  - "Implemented Docker Compose for local development environments"
+  - "Created Dockerfiles for Python, Node.js, and Go applications"
+  - "Optimized Docker images for production deployment"
+  - "Built CI/CD pipelines with Docker image building and testing"
+  - "Deployed containerized applications to Kubernetes"
+  - "Implemented Docker networking for multi-container applications"
+  - "Created Docker-based development environments for team consistency"
+  - "Built automated Docker image scanning and security checks"
+  - "Developed Docker orchestration with docker-compose"
+
+specific_tools:
+  - Docker
+  - Docker Compose
+  - Dockerfile
+  - Docker Hub
+  - Docker Registry
+  - BuildKit
+  - docker-compose.yml
+
+related_skills:
+  - Kubernetes
+  - CI/CD
+  - Linux
+  - Microservices
+  - DevOps
+  - Cloud platforms
+  - Container orchestration
+
+indicators:
+  - "Docker"
+  - "containerization"
+  - "containerized"
+  - "Dockerfile"
+  - "docker-compose"
+  - "container"
+  - "Docker image"
+
+category: "DevOps/Infrastructure"
+
+use_cases:
+  - Application deployment
+  - Development environments
+  - Microservices architecture
+  - CI/CD pipelines
+  - ML model serving
+  - Consistent testing environments
+  - Multi-service applications
+
+skill_level_indicators:
+  junior: "Created basic Dockerfiles and ran containers"
+  mid: "Built optimized Docker images with multi-stage builds and compose files"
+  senior: "Architected containerized infrastructure with orchestration and best practices"

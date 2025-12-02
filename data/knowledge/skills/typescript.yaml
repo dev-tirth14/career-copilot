@@ -1,0 +1,40 @@
+skill_name: "TypeScript"
+
+definition: |
+  Statically-typed superset of JavaScript that adds type safety and improved developer 
+  experience. TypeScript catches errors at compile-time, enables better IDE support, and 
+  is widely adopted for large-scale applications. Used extensively in React/Next.js 
+  frontends, Node.js backends, and API development.
+
+resume_manifestations:
+  - "Developed type-safe applications using TypeScript and React"
+  - "Built backend APIs with TypeScript and Node.js"
+  - "Implemented TypeScript type definitions for improved code quality"
+  - "Created Next.js applications with TypeScript"
+  - "Developed full-stack applications in TypeScript"
+  - "Built type-safe API clients with TypeScript"
+  - "Migrated JavaScript codebase to TypeScript"
+
+specific_tools:
+  - TypeScript
+  - Node.js
+  - Next.js
+  - React
+  - Express
+  - tsc (compiler)
+
+related_skills:
+  - JavaScript
+  - React
+  - Node.js
+  - Frontend development
+  - Backend APIs
+  - Type systems
+
+indicators:
+  - "TypeScript"
+  - "TS"
+  - "type-safe"
+  - "typed JavaScript"
+
+category: "Programming Languages"

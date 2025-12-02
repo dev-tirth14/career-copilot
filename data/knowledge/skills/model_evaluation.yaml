@@ -1,0 +1,41 @@
+skill_name: "Model Evaluation"
+
+definition: |
+  Process of measuring and assessing machine learning model performance using metrics, 
+  validation techniques, and testing frameworks. For LLMs, includes evaluating accuracy, 
+  relevance, coherence, safety, and task-specific performance. Essential for model 
+  selection, regression detection, and ensuring production quality.
+
+resume_manifestations:
+  - "Implemented model evaluation pipelines for AI algorithms"
+  - "Developed automated regression detection for model performance"
+  - "Built LLM evaluation framework measuring accuracy and quality"
+  - "Created A/B testing infrastructure for model comparison"
+  - "Implemented metrics tracking for token usage, latency, and cost"
+  - "Developed evaluation datasets and benchmarks"
+  - "Built automated testing for model outputs and edge cases"
+
+specific_tools:
+  - MLflow
+  - Weights & Biases
+  - scikit-learn metrics
+  - LangSmith
+  - Custom evaluation frameworks
+  - pytest
+
+related_skills:
+  - MLOps
+  - Statistical analysis
+  - A/B testing
+  - Metrics design
+  - Testing
+  - Model monitoring
+
+indicators:
+  - "model evaluation"
+  - "performance metrics"
+  - "evaluation pipeline"
+  - "regression detection"
+  - "model testing"
+
+category: "ML Engineering"

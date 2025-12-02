@@ -1,0 +1,67 @@
+skill_name: "Prompt Engineering"
+
+definition: |
+  The practice of designing, optimizing, and systematizing instructions (prompts) for 
+  large language models to achieve desired outputs reliably. Involves techniques like 
+  few-shot learning, chain-of-thought reasoning, structured output formatting, and 
+  iterative refinement. Essential for building production LLM applications where 
+  consistency, accuracy, and reliability are critical. Includes prompt templating, 
+  versioning, and evaluation.
+
+resume_manifestations:
+  - "Designed prompt engineering strategies for consistent LLM outputs"
+  - "Developed prompt templates with few-shot examples and structured output"
+  - "Implemented chain-of-thought prompting for complex reasoning tasks"
+  - "Created prompt versioning and A/B testing framework for optimization"
+  - "Built prompt library with reusable templates for common tasks"
+  - "Optimized prompts for accuracy, token efficiency, and latency"
+  - "Designed system prompts and instruction templates for AI agents"
+  - "Implemented prompt validation and testing infrastructure"
+  - "Developed prompt engineering guidelines and best practices"
+  - "Created dynamic prompt generation based on user context"
+  - "Built prompt monitoring and performance tracking system"
+  - "Implemented structured output prompts with JSON schema validation"
+
+specific_tools:
+  - LangChain PromptTemplates
+  - OpenAI Prompt Engineering Guide
+  - Anthropic Prompt Library
+  - DSPy
+  - Guidance (Microsoft)
+  - LMQL
+  - Semantic Kernel
+
+related_skills:
+  - LLMs
+  - Few-shot learning
+  - Chain-of-thought reasoning
+  - Structured outputs
+  - Model evaluation
+  - A/B testing
+  - Template design
+
+indicators:
+  - "prompt engineering"
+  - "prompt design"
+  - "prompt optimization"
+  - "few-shot"
+  - "chain-of-thought"
+  - "system prompt"
+  - "prompt template"
+  - "instruction tuning"
+
+category: "AI/ML Techniques"
+
+use_cases:
+  - Consistent LLM behavior
+  - Complex reasoning tasks
+  - Data extraction and structuring
+  - Creative content generation
+  - Code generation
+  - Classification and analysis
+  - Multi-step workflows
+
+skill_level_indicators:
+  junior: "Wrote basic prompts for LLM tasks with trial and error"
+  mid: "Designed systematic prompts with few-shot examples and structured outputs"
+  senior: "Built prompt engineering frameworks with versioning, testing, and optimization"

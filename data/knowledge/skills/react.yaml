@@ -1,0 +1,70 @@
+skill_name: "React"
+
+definition: |
+  Popular JavaScript library for building user interfaces, particularly single-page 
+  applications. React uses component-based architecture, virtual DOM for performance, 
+  and hooks for state management. Widely used for web applications, admin dashboards, 
+  and frontends for AI/ML applications. Modern React development includes TypeScript, 
+  Next.js, and state management libraries.
+
+resume_manifestations:
+  - "Built responsive web applications using React and TypeScript"
+  - "Developed interactive dashboards with React for data visualization"
+  - "Created React components for AI chatbot user interface"
+  - "Implemented real-time features using React with WebSockets"
+  - "Built admin interfaces with React and Material-UI"
+  - "Developed Next.js applications with server-side rendering"
+  - "Created reusable React component library for internal use"
+  - "Implemented state management with React hooks and Context API"
+  - "Built forms with validation using React Hook Form"
+  - "Developed React frontend consuming REST APIs and GraphQL"
+  - "Created responsive UI components with React and Tailwind CSS"
+  - "Implemented React testing with Jest and React Testing Library"
+
+specific_tools:
+  - React
+  - Next.js
+  - TypeScript
+  - React Hooks
+  - React Router
+  - Redux / Zustand
+  - Material-UI (MUI)
+  - Tailwind CSS
+  - Vercel
+  - Vite
+
+related_skills:
+  - JavaScript
+  - TypeScript
+  - HTML/CSS
+  - State management
+  - Component design
+  - RESTful APIs
+  - Frontend development
+  - Responsive design
+
+indicators:
+  - "React"
+  - "React.js"
+  - "ReactJS"
+  - "Next.js"
+  - "hooks"
+  - "components"
+  - "JSX"
+  - "frontend"
+
+category: "Frontend Development"
+
+use_cases:
+  - Web applications
+  - Admin dashboards
+  - AI chatbot interfaces
+  - Data visualization
+  - E-commerce sites
+  - Progressive web apps
+  - Mobile-responsive UIs
+
+skill_level_indicators:
+  junior: "Built basic React components and used state management"
+  mid: "Developed production React applications with routing, state, and optimization"
+  senior: "Architected scalable React applications with advanced patterns and performance"

@@ -1,5 +1,5 @@
-from .BaseScraper import BaseScraper
-from ..utils.config import Config
+from .base import BaseScraper
+from ..config.settings import Config
 from requests.exceptions import RequestException
 from bs4 import BeautifulSoup
 import json
@@ -36,6 +36,7 @@ class LinkedInScraper(BaseScraper):
                 break
             else:
                 start_index=start_index+len(job_cards)
+            
             for index in range(len(job_cards)):
                 job_card=job_cards[index].find(class_="base-card__full-link")
                 job_url=job_card.attrs.get("href")
@@ -51,17 +52,22 @@ class LinkedInScraper(BaseScraper):
                 role=jobSoup.find(class_="top-card-layout__title")
                 job_location=jobSoup.find(class_="aside-job-card__location")
                 raw_role_details=jobSoup.find(class_="show-more-less-html__markup")
-
-                jobs.append({
-                    "job_id":job_id,
-                    "company":company.text.strip(),
-                    "title":role.text.strip(),
-                    "location":job_location.text.strip(),
-                    "role_details":raw_role_details.text.strip(),
-                    "url":f"https://www.linkedin.com/jobs/view/{job_id}",
-                    "source":self.source,
-                    "scraped_at":datetime.now()
-                })
+                try:
+                    job={
+                        "job_id":job_id,
+                        "company":company.text.strip(),
+                        "title":role.text.strip(),
+                        "location":job_location.text.strip(),
+                        "role_details":raw_role_details.get_text('\n').strip(),
+                        "url":f"https://www.linkedin.com/jobs/view/{job_id}",
+                        "source":self.source,
+                        "scraped_at":datetime.now()
+                    }
+                    jobs.append(job)
+                    print(f"Scrape Successful for job: {job["job_id"]}")
+                except Exception as e:
+                    print(f"Scrape FAILED for job {job_url} because: {e}")
+                    continue
         return jobs
 
             

@@ -1,0 +1,33 @@
+skill_name: "System Design"
+
+definition: |
+  Process of defining architecture, components, interfaces, and data for systems that 
+  meet specified requirements. System design involves trade-offs around scalability, 
+  reliability, performance, cost, and maintainability. Essential for building production 
+  systems and technical interviews at top companies.
+
+resume_manifestations:
+  - "Architected scalable systems handling millions of requests"
+  - "Designed distributed systems with fault tolerance"
+  - "Collaborated on system architecture for multi-component products"
+  - "Designed database schemas and data flow across services"
+  - "Architected event-driven systems with async processing"
+  - "Designed caching strategies for performance optimization"
+  - "Created high-level design documents for new features"
+
+specific_tools:
+  - Architecture diagrams
+  - Load balancers
+  - Caching systems
+  - Message queues
+  - Databases
+
+related_skills:
+  - Software architecture
+  - Scalability
+  - Distributed systems
+  - Database design
+  - Performance optimization
+  - Trade-off analysis
+
+category: "Software Architecture"

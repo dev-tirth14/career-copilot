@@ -1,27 +1,72 @@
 # Python
-venv/
 __pycache__/
-*.pyc
-*.pyo
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
 *.egg-info/
+.installed.cfg
+*.egg
 .pytest_cache/
 
-# Environment
-config/.env
-.env
+# Virtual environments
+venv/
+env/
+ENV/
+.venv
 
-# Data (don't commit personal resume!)
-data/
-
-# Database
-*.db
-*.sqlite
+# UV
+.python-version
+uv.lock
 
 # IDEs
 .vscode/
 .idea/
 *.swp
+*.swo
+*~
 
 # OS
 .DS_Store
 Thumbs.db
+
+# Environment variables
+.env
+.env.local
+config/.env
+
+# Data files - ignore only database files
+data/*.db
+data/*.sqlite3
+data/**/*.db
+data/**/*.sqlite3
+
+# Logs
+logs/*.log
+*.log
+career_copilot.log
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Test coverage
+.coverage
+htmlcov/
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json

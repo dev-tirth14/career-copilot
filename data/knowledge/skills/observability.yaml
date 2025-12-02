@@ -1,0 +1,37 @@
+skill_name: "Observability"
+
+definition: |
+  Practice of instrumenting systems to understand their internal state through metrics, 
+  logs, and traces. Observability enables debugging, performance optimization, and 
+  reliability monitoring in production systems. For AI/ML, includes tracking model 
+  performance, token usage, latency, errors, and user interactions.
+
+resume_manifestations:
+  - "Implemented LLM observability infrastructure to evaluate model performance"
+  - "Built monitoring dashboards with Prometheus and Grafana"
+  - "Developed logging and tracing for distributed systems"
+  - "Created metrics instrumentation for performance tracking"
+  - "Implemented APM (Application Performance Monitoring) with OpenTelemetry"
+  - "Built alerting systems for production incidents"
+  - "Developed observability for ML pipelines and model serving"
+
+specific_tools:
+  - Prometheus
+  - Grafana
+  - OpenTelemetry
+  - Datadog
+  - New Relic
+  - ELK Stack
+  - IBM Instana
+  - LangSmith
+
+related_skills:
+  - Monitoring
+  - Logging
+  - Tracing
+  - Metrics
+  - DevOps
+  - Production engineering
+  - Debugging
+
+category: "DevOps/Infrastructure"

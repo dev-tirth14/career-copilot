@@ -1,0 +1,73 @@
+skill_name: "MLOps"
+
+definition: |
+  Practices and tools for deploying, monitoring, and maintaining machine learning models 
+  in production. MLOps combines ML engineering with DevOps, covering model versioning, 
+  automated training pipelines, deployment strategies, monitoring for drift and performance, 
+  and infrastructure management. For LLM applications, includes observability, evaluation, 
+  cost tracking, and prompt versioning. Essential for reliable, scalable AI systems.
+
+resume_manifestations:
+  - "Implemented MLOps pipelines for model training, evaluation, and deployment"
+  - "Built LLM observability infrastructure for performance monitoring"
+  - "Developed automated model evaluation and regression detection system"
+  - "Created CI/CD pipelines for ML model deployment"
+  - "Implemented model versioning and experiment tracking with MLflow"
+  - "Built monitoring dashboards for model performance and drift detection"
+  - "Developed automated retraining pipelines triggered by performance degradation"
+  - "Implemented A/B testing framework for model comparison"
+  - "Created infrastructure for model serving with auto-scaling"
+  - "Built feature engineering pipelines with data validation"
+  - "Implemented model registry and governance system"
+  - "Developed cost tracking and optimization for LLM applications"
+
+specific_tools:
+  - MLflow
+  - Kubeflow
+  - Weights & Biases
+  - Airflow
+  - ArgoCD
+  - Docker
+  - Kubernetes
+  - Prometheus
+  - Grafana
+  - LangSmith
+  - OpenTelemetry
+  - DVC (Data Version Control)
+
+related_skills:
+  - DevOps
+  - CI/CD
+  - Monitoring
+  - Model evaluation
+  - Docker/Kubernetes
+  - Cloud platforms
+  - Pipeline orchestration
+  - Observability
+
+indicators:
+  - "MLOps"
+  - "ML operations"
+  - "model deployment"
+  - "model monitoring"
+  - "ML pipeline"
+  - "model serving"
+  - "observability"
+  - "model evaluation"
+  - "experiment tracking"
+
+category: "ML Engineering"
+
+use_cases:
+  - Production model deployment
+  - Continuous training and evaluation
+  - Model performance monitoring
+  - A/B testing and experimentation
+  - Cost optimization
+  - Model governance
+  - Pipeline automation
+
+skill_level_indicators:
+  junior: "Deployed models using existing platforms and followed MLOps practices"
+  mid: "Built automated ML pipelines with monitoring and evaluation"
+  senior: "Architected end-to-end MLOps infrastructure for organization-wide use"

@@ -1,0 +1,40 @@
+skill_name: "Go (Golang)"
+
+definition: |
+  Statically-typed, compiled programming language designed for simplicity, concurrency, 
+  and performance. Go excels at building scalable backend services, APIs, microservices, 
+  and cloud infrastructure tools. Known for goroutines (lightweight threads), fast 
+  compilation, and excellent standard library.
+
+resume_manifestations:
+  - "Built extensible plugin framework in Golang for enterprise customization"
+  - "Developed high-performance microservices using Go"
+  - "Created concurrent data processing pipelines with Go goroutines"
+  - "Built REST APIs in Go with Gin or Echo framework"
+  - "Developed CLI tools and utilities in Golang"
+  - "Implemented gRPC services in Go"
+  - "Built scalable backend systems with Go and PostgreSQL"
+
+specific_tools:
+  - Go / Golang
+  - Gin framework
+  - Echo framework
+  - gRPC
+  - goroutines
+  - channels
+
+related_skills:
+  - Concurrency
+  - Microservices
+  - Backend development
+  - System programming
+  - API development
+  - Performance optimization
+
+indicators:
+  - "Go"
+  - "Golang"
+  - "goroutines"
+  - "Go language"
+
+category: "Programming Languages"

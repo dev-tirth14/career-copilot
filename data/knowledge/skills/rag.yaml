@@ -1,0 +1,73 @@
+skill_name: "RAG (Retrieval-Augmented Generation)"
+
+definition: |
+  Retrieval-Augmented Generation is a technique that combines information retrieval with 
+  large language models to generate more accurate, grounded responses. RAG systems retrieve 
+  relevant context from a knowledge base (often using vector databases) and provide it to 
+  the LLM to augment its generation. This reduces hallucinations, enables access to private 
+  data, and keeps information current without retraining. Essential for building production 
+  LLM applications with proprietary knowledge.
+
+resume_manifestations:
+  - "Built RAG pipeline for semantic document retrieval and question answering"
+  - "Implemented retrieval-augmented generation system using vector embeddings"
+  - "Developed RAG-based conversational assistant for enterprise knowledge base"
+  - "Created semantic search and retrieval system for LLM-powered applications"
+  - "Architected RAG infrastructure with vector databases and embedding models"
+  - "Built document retrieval system augmenting LLM responses with relevant context"
+  - "Implemented hybrid search combining keyword and semantic retrieval for RAG"
+  - "Designed RAG pipeline with chunking, embedding, and retrieval optimization"
+  - "Developed context-aware LLM system using retrieval-augmented generation"
+  - "Built production RAG application with real-time document indexing"
+  - "Implemented multi-source RAG aggregating data from multiple knowledge bases"
+  - "Created RAG system with re-ranking and relevance scoring"
+
+specific_tools:
+  - LangChain
+  - LlamaIndex
+  - ChromaDB
+  - Pinecone
+  - Weaviate
+  - pgvector
+  - FAISS
+  - Milvus
+  - Qdrant
+  - Haystack
+  - Sentence Transformers
+  - OpenAI Embeddings
+
+related_skills:
+  - Vector databases
+  - Embeddings
+  - Semantic search
+  - LLMs
+  - Information retrieval
+  - Document processing
+  - Chunking strategies
+  - Re-ranking algorithms
+
+indicators:
+  - "RAG"
+  - "retrieval-augmented"
+  - "retrieval augmented generation"
+  - "semantic retrieval"
+  - "context retrieval"
+  - "document retrieval"
+  - "knowledge retrieval"
+  - "augmented generation"
+
+category: "AI/ML Techniques"
+
+use_cases:
+  - Question answering systems
+  - Chatbots with domain knowledge
+  - Document analysis and summarization
+  - Enterprise knowledge assistants
+  - Customer support automation
+  - Research and discovery tools
+  - Code documentation assistants
+
+skill_level_indicators:
+  junior: "Implemented basic RAG using existing frameworks like LangChain"
+  mid: "Built production RAG with custom chunking, embedding, and retrieval strategies"
+  senior: "Architected advanced RAG with hybrid search, re-ranking, and optimization"

@@ -1,0 +1,66 @@
+skill_name: "LangChain"
+
+definition: |
+  Popular Python/TypeScript framework for building applications with large language models. 
+  LangChain provides abstractions for chains, agents, memory, retrievers, and prompts, 
+  making it easier to build complex LLM workflows. Includes integrations with many LLM 
+  providers, vector databases, and tools. Widely used for RAG systems, chatbots, and 
+  agent-based applications. Understanding LangChain patterns and architecture is valuable 
+  for rapid LLM application development.
+
+resume_manifestations:
+  - "Built LLM applications using LangChain framework"
+  - "Developed RAG pipelines with LangChain and vector databases"
+  - "Implemented conversational agents using LangChain agent framework"
+  - "Created custom LangChain chains for multi-step workflows"
+  - "Built chatbots with LangChain memory and conversation management"
+  - "Developed LangChain-based document processing and Q&A system"
+  - "Implemented tool-using agents with LangChain and custom functions"
+  - "Built retrieval chains combining vector search with LLM generation"
+  - "Created LangChain integration with proprietary data sources"
+  - "Developed custom LangChain components and extensions"
+  - "Built production applications using LangChain Expression Language (LCEL)"
+  - "Implemented LangSmith for LangChain application monitoring"
+
+specific_tools:
+  - LangChain (Python)
+  - LangChain.js (TypeScript)
+  - LangSmith (monitoring)
+  - LangServe (deployment)
+  - LCEL (LangChain Expression Language)
+  - LangGraph (for agents)
+
+related_skills:
+  - LLMs
+  - RAG
+  - Agents
+  - Prompt engineering
+  - Vector databases
+  - Python
+  - API integration
+
+indicators:
+  - "LangChain"
+  - "Langchain"
+  - "LCEL"
+  - "LangSmith"
+  - "LangServe"
+  - "LangGraph"
+  - "chain"
+  - "retrieval chain"
+
+category: "Frameworks/Libraries"
+
+use_cases:
+  - RAG applications
+  - Chatbots and assistants
+  - Document Q&A
+  - Agent-based automation
+  - Multi-step LLM workflows
+  - Data extraction pipelines
+  - Conversational interfaces
+
+skill_level_indicators:
+  junior: "Used LangChain for basic RAG and chatbot applications"
+  mid: "Built production applications with custom LangChain chains and integrations"
+  senior: "Architected complex multi-agent systems and extended LangChain framework"

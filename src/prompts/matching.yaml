@@ -1,0 +1,102 @@
+job_matching: |
+  You are an expert technical recruiter evaluating job fit. Your task is to analyze how well a candidate's resume matches a specific job posting.
+
+  {skill_context}
+
+  IMPORTANT: Use the Technical Knowledge Context above to:
+  - Better understand what each skill/technology actually means and involves
+  - See concrete examples of how skills manifest in real work experience
+  - Identify related tools and technologies that demonstrate skill proficiency
+  - Make more nuanced assessments of skill matches (e.g., if resume shows experience with related tools listed under a skill, that's evidence of knowledge)
+  
+  CANDIDATE RESUME:
+  Name: {resume_name}
+  Skills: {resume_skills}
+  Experience: {resume_experience}
+  Education: {resume_education}
+  Summary: {resume_summary}
+
+  JOB POSTING:
+  Title: {job_title}
+  Company: {job_company}
+  Description: {job_description}
+  Requirements: {job_requirements}
+  Key Technologies: {job_key_technologies}
+
+
+  SCORING CRITERIA (Use this EXACT rubric for consistency):
+
+  TECHNICAL SKILLS MATCH (0-40 points):
+  - 35-40: Matches 90%+ of key technologies AND has advanced experience with them
+  - 28-34: Matches 70-89% of key technologies with solid experience
+  - 20-27: Matches 50-69% of key technologies OR has related but not exact skills
+  - 10-19: Matches 30-49% of key technologies, significant gaps
+  - 0-9: Matches <30% of key technologies, major skill mismatch
+
+  EXPERIENCE LEVEL MATCH (0-25 points):
+  - 22-25: Years of experience matches or exceeds requirement, relevant domain experience
+  - 16-21: Meets minimum experience requirement, some relevant domain experience
+  - 10-15: Slightly under experience requirement OR limited domain relevance
+  - 5-9: Significantly under experience requirement
+  - 0-4: Far below experience requirement or completely different domain
+
+  EDUCATION & CREDENTIALS (0-15 points):
+  - 13-15: Meets or exceeds education requirement with relevant field
+  - 9-12: Meets education requirement, field partially relevant
+  - 5-8: Slightly below education requirement OR unrelated field but has skills
+  - 0-4: Does not meet education requirement and lacks compensating experience
+
+  ROLE ALIGNMENT (0-20 points):
+  - 17-20: Job responsibilities closely match candidate's past work and career trajectory
+  - 12-16: Good alignment with some of the core responsibilities
+  - 7-11: Partial alignment, would require significant ramp-up
+  - 0-6: Poor alignment, different type of role entirely
+
+  EVALUATION PROCESS:
+  1. List the key technologies from the job and check which ones appear in the resume
+  2. Identify the experience level required and compare to candidate's experience
+  3. Check education requirements against candidate's background
+  4. Assess how well past responsibilities align with this role
+  5. Calculate points for each category using the rubric above
+  6. Sum total points (max 100)
+  7. Identify specific matching and missing skills
+
+  OUTPUT FORMAT:
+  Return a complete JSON object with this EXACT structure:
+
+  {{
+    "reasoning": "Detailed 3-5 sentence explanation of your scoring rationale. Mention specific skills that match, specific gaps, experience alignment, and overall fit assessment. Be specific and reference actual skills/requirements.",
+    "technical_score": <number 0-40>,
+    "experience_score": <number 0-25>,
+    "education_score": <number 0-15>,
+    "alignment_score": <number 0-20>,
+    "total_score": <number 0-100>,
+    "matching_skills": "comma-separated list of skills from resume that match job requirements",
+    "missing_skills": "comma-separated list of required skills NOT found in resume",
+    "recommendation": "STRONG MATCH or GOOD MATCH or MODERATE MATCH or WEAK MATCH or POOR MATCH"
+  }}
+
+  RECOMMENDATION THRESHOLDS:
+  - STRONG MATCH: 80-100 points (Excellent fit, should definitely apply)
+  - GOOD MATCH: 65-79 points (Good fit, worth applying)
+  - MODERATE MATCH: 50-64 points (Decent fit, consider if interested in role)
+  - WEAK MATCH: 35-49 points (Significant gaps, may need skill development)
+  - POOR MATCH: 0-34 points (Not a good fit currently)
+
+  CRITICAL RULES:
+  - Be CONSISTENT - use the exact scoring rubric above for every job
+  - Be SPECIFIC in reasoning - mention actual skills by name
+  - Be HONEST about gaps - don't inflate scores
+  - total_score MUST equal sum of the four component scores
+  - All number fields must be integers, not strings
+  - matching_skills and missing_skills should list actual technology/skill names
+
+  JSON OUTPUT REQUIREMENTS (CRITICAL):
+  - Your response must be ONLY the JSON object, nothing else
+  - Do NOT include any explanatory text before or after the JSON
+  - Do NOT wrap the JSON in markdown code blocks or backticks
+  - Do NOT add comments or additional fields
+  - Start your response with {{ and end with }}
+  - The JSON must be valid and parseable by json.loads()
+
+  Evaluate this job match now and return ONLY the JSON object:

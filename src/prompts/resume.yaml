@@ -1,0 +1,221 @@
+basic_resume_extraction: |
+  Extract information from this resume and return ONLY valid JSON.
+  
+  RESUME TEXT:
+  {resume_text}
+  
+  ============================================
+  CRITICAL: COMPLETE EXTRACTION REQUIRED
+  ============================================
+  
+  YOU MUST EXTRACT EVERY SINGLE WORD FROM:
+  - ALL responsibility bullets (complete sentences, no summarizing)
+  - ALL project descriptions (complete text, no shortening)
+  - ALL skills mentioned anywhere
+  
+  DO NOT summarize, shorten, or paraphrase ANY content.
+  Extract the EXACT, COMPLETE text from the resume.
+  
+  ============================================
+  REQUIRED JSON STRUCTURE
+  ============================================
+  
+  {{
+    "name": "string",
+    "email": "string",
+    "phone_number": "string",
+    "summary": "string",
+    "skills": ["skill1", "skill2", "skill3"],
+    "experience": [
+      {{
+        "job_title": "string",
+        "company": "string",
+        "location": "string",
+        "dates": "string",
+        "responsibilities": ["complete bullet 1", "complete bullet 2"]
+      }}
+    ],
+    "projects": [
+      {{
+        "name": "string",
+        "description": "string",
+        "technologies": ["tech1", "tech2"],
+        "link": "string"
+      }}
+    ],
+    "education": "string"
+  }}
+  
+  ============================================
+  EXTRACTION REQUIREMENTS
+  ============================================
+  
+  1. NAME: Extract full name exactly as written
+  
+  2. EMAIL: Extract email address
+  
+  3. PHONE_NUMBER: Extract phone number
+  
+  4. SUMMARY: Create a professional 2-3 sentence summary based on the resume
+  
+  5. SKILLS: Extract EVERY skill mentioned ANYWHERE in resume
+     - Search in: Skills section, job descriptions, projects, tools mentioned
+     - Include: Languages, frameworks, tools, databases, platforms, methodologies
+     - Format: Flat array of strings
+     - Examples: ["Python", "Go", "JavaScript", "LLMs", "RAG", "Langchain", "Vector Databases", "pgvector", "Docker", "Kubernetes", "PostgreSQL", "React", "FastAPI"]
+     
+     CRITICAL: This resume lists many skills - extract ALL of them, not just a few.
+  
+  6. EXPERIENCE: Extract ALL work positions (this resume has 3)
+     
+     For EACH position, extract:
+     - job_title: Position title
+     - company: Company name
+     - location: City, State/Province
+     - dates: Date range
+     - responsibilities: Array of COMPLETE bullet points
+     
+     CRITICAL FOR RESPONSIBILITIES:
+     - Extract EVERY bullet point for each job
+     - Copy the COMPLETE text of each bullet (full sentences)
+     - DO NOT summarize or shorten
+     - DO NOT paraphrase
+     - Include ALL details, metrics, technologies mentioned
+     
+     Example of CORRECT extraction (complete):
+     "Architecting and developing AI solutions for IBM Concert, an IT resilience product, delivering a conversational assistant enabling enterprise users to query data, access documentation, and automate vulnerability remediation workflows through natural language, providing intuitive chat-based access to agentic operations"
+     
+     Example of WRONG extraction (truncated):
+     "Architecting and developing AI solutions for IBM Concert"  ← TOO SHORT!
+  
+  7. PROJECTS: Extract ALL personal/side projects (this resume has 2)
+     
+     For EACH project, extract:
+     - name: Project name
+     - description: COMPLETE description (all bullets combined into one description)
+     - technologies: Array of ALL technologies mentioned
+     - link: URL if available (empty string "" if not)
+     
+     CRITICAL FOR PROJECT DESCRIPTION:
+     - Combine ALL bullet points about the project into the description
+     - Include COMPLETE text, not summaries
+     - Example: "AI-powered job search tool developed to streamline the process of finding relevant job postings. Built using SpringBoot (Spring Controller, JPA, Hibernate), LLM (OpenAI), MySQL, Web Scraping (JSoup)."
+     
+     CRITICAL FOR TECHNOLOGIES:
+     - Extract ALL technologies mentioned for each project
+     - Include specific libraries/frameworks (e.g., "Spring Controller", "JPA", "Hibernate")
+     - Example: ["SpringBoot", "Spring Controller", "JPA", "Hibernate", "LLM (OpenAI)", "MySQL", "Web Scraping (JSoup)"]
+  
+  8. EDUCATION: Extract education
+     Format: "Degree, Major | Institution | Years"
+  
+  ============================================
+  EXAMPLE OUTPUT (SHOWING COMPLETE EXTRACTION)
+  ============================================
+  
+  {{
+    "name": "Tirth Patel",
+    "email": "Dev.tirthp14@gmail.com",
+    "phone_number": "+1 (647) 533-7957",
+    "summary": "AI/ML Software Developer with 4+ years of experience building LLM-powered applications, conversational AI, and MLOps pipelines. Expertise in Python, Go, RAG systems, vector databases, and cloud infrastructure. Currently architecting enterprise AI solutions at IBM.",
+    "skills": ["Python", "Go", "JavaScript", "Java", "SQL", "Bash", "LLMs", "RAG", "Agentic Frameworks", "Vector Databases", "pgvector", "Prompt Engineering", "Model Evaluation", "LLM Observability", "Langchain", "NumPy", "Pandas", "Scikit-learn", "PostgreSQL", "ElasticSearch", "Firebase", "Amazon S3", "React", "Spring Boot", "FastAPI", "Node.js", "Docker", "Kubernetes", "OpenShift", "Jenkins", "Git", "ArgoCD", "OpenTelemetry", "IBM Instana"],
+    "experience": [
+      {{
+        "job_title": "AI Software Developer",
+        "company": "IBM",
+        "location": "Markham, Ontario",
+        "dates": "2024 - 2025",
+        "responsibilities": [
+          "Architecting and developing AI solutions for IBM Concert, an IT resilience product, delivering a conversational assistant enabling enterprise users to query data, access documentation, and automate vulnerability remediation workflows through natural language, providing intuitive chat-based access to agentic operations",
+          "Engineered proactive diagnostic agents powered by LLM-driven root cause analysis and dependency mapping to autonomously detect cascading non-functional violations across enterprise systems and generate prioritized remediation strategies - reducing mean time to resolution and improving operational reliability",
+          "Built an extensible plugin framework (Golang), enabling enterprises to customize product workflows by registering custom GenAI providers and integrating proprietary systems via API endpoints",
+          "Implemented LLM observability infrastructure to evaluate model performance through token usage, latency, response quality, and cost metrics—enabling data-driven model selection, regression tracking, and process optimization across production deployments",
+          "Collaborated with distributed teams worldwide to design system architecture and integration patterns covering UI, backend, and database layers—aligning technical standards and ensuring smooth data flow across multiple product components"
+        ]
+      }},
+      {{
+        "job_title": "Software Developer",
+        "company": "IBM",
+        "location": "Markham, Ontario",
+        "dates": "2021 - 2022",
+        "responsibilities": [
+          "Engineered end-to-end MLOps evaluation pipelines in Python to benchmark 5+ AI algorithms within Watson AIOps",
+          "Implemented automated regression detection infrastructure using Argo CronWorkflow for weekly model performance monitoring, reducing manual testing overhead by 5+ hours per cycle and enabling continuous quality assurance",
+          "Developed automated time-to-value metric collection system with visualization dashboards in Redash and React, providing real-time insights into algorithm performance and deployment efficiency for cross-functional stakeholders",
+          "Established comprehensive testing framework using Pytest for algorithm validation and API integration testing"
+        ]
+      }},
+      {{
+        "job_title": "Full Stack Developer",
+        "company": "Tenders2Bid",
+        "location": "Markham, Ontario",
+        "dates": "2020 - 2021",
+        "responsibilities": [
+          "Developed full-stack features for global bidding platform using React and Python, implementing real-time data interactions, responsive UI components with asynchronous data handling, and conducting code reviews to enhance platform reliability"
+        ]
+      }}
+    ],
+    "projects": [
+      {{
+        "name": "HireVis",
+        "description": "AI-powered job search tool developed to streamline the process of finding relevant job postings. Built using SpringBoot (Spring Controller, JPA, Hibernate), LLM (OpenAI), MySQL, Web Scraping (JSoup).",
+        "technologies": ["SpringBoot", "Spring Controller", "JPA", "Hibernate", "LLM (OpenAI)", "MySQL", "Web Scraping (JSoup)"],
+        "link": "https://github.com/dev-tirth14/HireVis"
+      }},
+      {{
+        "name": "Rendezvous",
+        "description": "Social media app for Android, specifically for event finding/creating. Built using Flutter, Firebase, and Google Maps Platform.",
+        "technologies": ["Flutter", "Firebase", "Google Maps Platform"],
+        "link": "https://github.com/TirthPOnTechU/Rendezvous"
+      }}
+    ],
+    "education": "BSc (Hons), Computer Science Co-op | Ontario Tech University | 2018 - 2023"
+  }}
+  
+  ============================================
+  VALIDATION CHECKLIST
+  ============================================
+  
+  Before responding, verify:
+  
+  EXPERIENCE:
+  [ ] Did I extract ALL 3 work experiences?
+  [ ] Did I extract ALL 5 responsibilities for AI Software Developer?
+  [ ] Did I extract ALL 4 responsibilities for Software Developer?
+  [ ] Did I extract ALL responsibilities for Full Stack Developer?
+  [ ] Are ALL responsibility bullets COMPLETE (not shortened)?
+  [ ] Did I include all details, metrics, and technologies in each bullet?
+  
+  PROJECTS:
+  [ ] Did I extract BOTH projects (HireVis and Rendezvous)?
+  [ ] Did project descriptions include ALL information from ALL bullets?
+  [ ] Did I extract ALL technologies for each project (not just 2-3)?
+  [ ] Are links included (or empty string if no link)?
+  
+  SKILLS:
+  [ ] Did I extract from Skills section?
+  [ ] Did I extract skills mentioned in job descriptions?
+  [ ] Did I extract skills mentioned in projects?
+  [ ] Did I include ALL specific tools (pgvector, Langchain, ArgoCD, OpenTelemetry, IBM Instana, etc.)?
+  [ ] Total should be 30+ skills for this resume
+  
+  STRUCTURE:
+  [ ] Is my JSON valid (proper quotes, commas)?
+  [ ] Does it start with {{ and end with }}?
+  [ ] Is there NO text before or after the JSON?
+  
+  ============================================
+  CRITICAL REMINDERS
+  ============================================
+  
+  1. NEVER summarize or shorten responsibility bullets
+  2. NEVER truncate project descriptions
+  3. Extract COMPLETE sentences with ALL details
+  4. Include ALL metrics, technologies, and specifics
+  5. This resume has LONG, detailed bullets - keep them ALL
+  6. Count your bullets: AI Developer should have 5, Software Developer should have 4
+  7. Extract ALL skills (30+), not just a subset
+  
+  ============================================
+  NOW RETURN THE COMPLETE JSON
+  ============================================

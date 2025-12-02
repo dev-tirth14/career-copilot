@@ -1,0 +1,68 @@
+skill_name: "PostgreSQL"
+
+definition: |
+  Advanced open-source relational database system known for reliability, data integrity, 
+  and extensibility. PostgreSQL supports complex queries, transactions, JSON, and with 
+  extensions like pgvector, enables vector similarity search for AI applications. Widely 
+  used for production applications requiring ACID compliance, complex data relationships, 
+  and advanced features like full-text search, spatial data, and time-series data.
+
+resume_manifestations:
+  - "Designed and implemented PostgreSQL database schemas for production applications"
+  - "Optimized PostgreSQL queries for performance at scale"
+  - "Implemented vector search using pgvector extension"
+  - "Built data pipelines with PostgreSQL as primary data store"
+  - "Managed PostgreSQL databases with replication and backup strategies"
+  - "Developed complex SQL queries and stored procedures"
+  - "Implemented PostgreSQL database migrations and versioning"
+  - "Built applications using PostgreSQL with SQLAlchemy ORM"
+  - "Optimized PostgreSQL indexes for query performance"
+  - "Implemented database security and access control in PostgreSQL"
+  - "Designed normalized database schemas with foreign key relationships"
+  - "Built real-time analytics using PostgreSQL materialized views"
+
+specific_tools:
+  - PostgreSQL
+  - pgvector (vector extension)
+  - pgAdmin
+  - psql
+  - pg_dump / pg_restore
+  - SQLAlchemy
+  - Alembic (migrations)
+  - PostGIS (spatial data)
+  - TimescaleDB
+
+related_skills:
+  - SQL
+  - Database design
+  - Query optimization
+  - Indexing strategies
+  - Transactions
+  - Data modeling
+  - Vector databases (with pgvector)
+  - Backend development
+
+indicators:
+  - "PostgreSQL"
+  - "Postgres"
+  - "psql"
+  - "pgvector"
+  - "relational database"
+  - "SQL database"
+  - "database design"
+
+category: "Databases"
+
+use_cases:
+  - Production application databases
+  - Data warehousing
+  - Vector search with pgvector
+  - Transactional systems
+  - Analytics and reporting
+  - Time-series data
+  - Spatial data applications
+
+skill_level_indicators:
+  junior: "Used PostgreSQL for basic CRUD operations and simple queries"
+  mid: "Designed database schemas, wrote complex queries, and optimized performance"
+  senior: "Architected database systems with replication, sharding, and advanced features"

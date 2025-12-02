@@ -1,0 +1,34 @@
+skill_name: "Microservices"
+
+definition: |
+  Architectural pattern where applications are composed of small, independent services 
+  that communicate via APIs. Each microservice handles a specific business capability, 
+  can be deployed independently, and uses its own database. Common in cloud-native 
+  applications requiring scalability, resilience, and team autonomy.
+
+resume_manifestations:
+  - "Architected microservices architecture for scalable applications"
+  - "Developed independent services communicating via REST APIs"
+  - "Built microservices with Docker and Kubernetes orchestration"
+  - "Implemented service mesh for microservices communication"
+  - "Designed API contracts and service boundaries"
+  - "Built event-driven microservices with message queues"
+  - "Developed distributed tracing for microservices debugging"
+
+specific_tools:
+  - Docker
+  - Kubernetes
+  - Kong / Nginx
+  - RabbitMQ / Kafka
+  - gRPC
+  - Service Mesh (Istio)
+
+related_skills:
+  - Distributed systems
+  - API design
+  - Docker
+  - Kubernetes
+  - Cloud platforms
+  - Event-driven architecture
+
+category: "Software Architecture"

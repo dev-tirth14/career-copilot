@@ -1,0 +1,105 @@
+job_extraction: |
+  Extract structured information from the job posting below.
+  
+  CRITICAL RULE: NEVER add information that is not explicitly in the posting.
+  CRITICAL RULE: NEVER infer, guess, or assume requirements.
+  CRITICAL RULE: If something is not mentioned, DO NOT include it.
+  
+  Output valid JSON with these three fields:
+  - description: High-level summary of the role
+  - requirements: Array of technical/hard requirements EXACTLY as written
+  - key_technologies: Array of individual technologies EXPLICITLY mentioned
+  
+  RULES FOR description:
+  - Write a 2-3 sentence SUMMARY based ONLY on what's in the posting
+  - Synthesize the information provided, don't copy-paste
+  - Focus on: What will they build? What domain? What's the main focus?
+  - NEVER add technologies or details not mentioned in the posting
+     
+  RULES FOR requirements:
+  - Extract EVERY SINGLE technical/hard requirement that is EXPLICITLY stated
+  - You MUST capture ALL requirements - do NOT skip or omit any
+  - Each requirement should be a SEPARATE item in the array
+  - Copy each requirement EXACTLY word-for-word from the posting
+  - DO NOT rephrase, summarize, paraphrase, or alter the wording
+  - DO NOT combine multiple requirements into one item
+  - DO NOT add requirements that seem logical but aren't stated
+  - DO NOT infer requirements from context
+  - DO NOT include soft skills (communication, problem-solving, teamwork, analytical, collaboration)
+  - DO NOT include: salary, location, benefits, perks, company culture
+
+  EXTRACTION RULES - CAPTURE LINE BY LINE:
+  - If the posting lists requirements as bullet points, each bullet = one array item
+  - If requirements are in a paragraph, extract each distinct requirement separately
+  - Common patterns to look for:
+    * "X years of experience in Y" - one requirement
+    * "Proficient in A and B" - one requirement (or two if listed separately)
+    * "Experience with X, Y, and Z" - one requirement (or separate if in bullets)
+    * "Bachelor's degree in X" - one requirement
+    * "Knowledge of X" - one requirement
+    * "Hands-on experience with Y" - one requirement
+  - NEVER skip requirements because they seem similar or redundant
+  - CAPTURE EVERYTHING in the requirements section, even if it overlaps with technologies
+
+  ✅ INCLUDE (if explicitly stated):
+  - Education requirements (e.g., "Bachelor's degree in Computer Science")
+  - Years of experience (e.g., "5+ years of Python development")
+  - Technical skills (e.g., "Experience with AWS SageMaker")
+  - Domain knowledge (e.g., "Experience in healthcare")
+  - Nice-to-have technical skills (e.g., "Familiarity with Kubernetes")
+  - Preferred/bonus requirements (e.g., "Preferred: experience with Docker")
+
+  ❌ EXCLUDE:
+  - Soft skills ("Strong communication skills", "Problem-solving", "Team player")
+  - Non-requirements (salary, location, benefits, company info)
+  - Inferred requirements (if not explicitly stated, don't include it)
+  
+  RULES FOR key_technologies:
+  - CRITICAL: Extract technologies ONLY from the requirements you captured above
+  - DO NOT scan the entire job posting for technologies
+  - DO NOT include technologies from job description, company info, or benefits
+  - ONLY analyze the requirements array you just extracted
+  - List each technology mentioned in those requirements as a separate item
+  - Extract individual technologies, NOT grouped
+  - WRONG: "ML frameworks (TensorFlow, PyTorch)"
+  - RIGHT: "TensorFlow", "PyTorch", "scikit-learn"
+  - If "AWS" is mentioned generally in requirements, include "AWS"
+  - If specific AWS services are mentioned in requirements, list them individually
+
+  EXTRACTION PROCESS:
+  1. Look at each requirement you extracted
+  2. Identify any technology, tool, framework, language, or platform mentioned
+  3. Add it to key_technologies as an individual item
+  4. DO NOT add technologies from anywhere else in the posting
+  
+  ANTI-HALLUCINATION CHECKLIST:
+  Before including ANY item, verify:
+  1. ✓ Is this EXPLICITLY mentioned in the posting?
+  2. ✓ Am I copying it EXACTLY as written (for requirements)?
+  3. ✓ Am I NOT adding my own assumptions?
+  
+  EXAMPLES OF HALLUCINATION (DO NOT DO THIS):
+  ❌ Posting says "Python" → You add "Python 3.x" (too specific, not stated)
+  ❌ Posting says "AWS" → You add "EC2, S3, Lambda" (not explicitly listed)
+  ❌ Posting says "ML models" → You add "Experience with scikit-learn" (not stated)
+  ❌ Posting says "APIs" → You add "RESTful API design" (not explicitly stated)
+  
+  EXAMPLES OF CORRECT EXTRACTION:
+  ✅ Posting says "Experience with Python and AWS" → Include exactly that
+  ✅ Posting says "SageMaker, Bedrock, Lambda" → Include each individually
+  ✅ Posting says "Nice to have: Kubernetes" → Include exactly as written
+  
+  OUTPUT FORMAT - CRITICAL:
+  - Output ONLY raw JSON, nothing else
+  - NO markdown code blocks (no ```json or ```)
+  - NO explanations before or after the JSON
+  - NO extra text or commentary
+  - Start directly with {{ and end with }}
+  - The JSON must be valid and parseable by json.loads()
+
+  JOB POSTING:
+  ---
+  {job_text}
+  ---
+
+  JSON OUTPUT (raw JSON only, no markdown):

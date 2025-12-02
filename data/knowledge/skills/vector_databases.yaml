@@ -1,0 +1,77 @@
+skill_name: "Vector Databases"
+
+definition: |
+  Specialized databases optimized for storing and querying high-dimensional vector 
+  embeddings. Vector databases enable semantic search, similarity matching, and nearest 
+  neighbor queries essential for modern AI applications. They index vectors for efficient 
+  similarity search (using algorithms like HNSW, IVF) and are fundamental for RAG systems, 
+  recommendation engines, and any application requiring semantic understanding rather than 
+  exact keyword matching.
+
+resume_manifestations:
+  - "Implemented vector database using pgvector for semantic search"
+  - "Built embedding storage and retrieval system with Pinecone"
+  - "Architected vector database infrastructure for RAG pipeline"
+  - "Developed semantic search using ChromaDB for document retrieval"
+  - "Implemented similarity search with vector embeddings in production"
+  - "Built vector indexing system for millions of embeddings"
+  - "Designed hybrid search combining vector and keyword search"
+  - "Integrated Weaviate for multi-modal vector search"
+  - "Optimized vector database performance for low-latency retrieval"
+  - "Implemented vector database with metadata filtering and re-ranking"
+  - "Built distributed vector search infrastructure"
+  - "Created vector embedding pipeline with database integration"
+
+specific_tools:
+  - pgvector
+  - Pinecone
+  - Weaviate
+  - ChromaDB
+  - Milvus
+  - Qdrant
+  - FAISS
+  - Elasticsearch with vectors
+  - Redis with vector search
+  - MongoDB Atlas Vector Search
+  - SingleStore
+  - Vespa
+
+related_skills:
+  - Embeddings
+  - Semantic search
+  - RAG
+  - Similarity algorithms
+  - Index optimization
+  - Database management
+  - Nearest neighbor search
+  - High-dimensional data
+
+indicators:
+  - "vector database"
+  - "vector db"
+  - "embedding storage"
+  - "semantic search"
+  - "similarity search"
+  - "vector index"
+  - "nearest neighbor"
+  - "pgvector"
+  - "Pinecone"
+  - "ChromaDB"
+  - "Weaviate"
+  - "Milvus"
+
+category: "Data Infrastructure"
+
+use_cases:
+  - RAG systems
+  - Semantic search engines
+  - Recommendation systems
+  - Duplicate detection
+  - Image/video similarity search
+  - Anomaly detection
+  - Clustering and classification
+
+skill_level_indicators:
+  junior: "Used vector database services like Pinecone with basic queries"
+  mid: "Implemented vector search with optimization and custom indexing"
+  senior: "Architected distributed vector database systems with advanced retrieval"

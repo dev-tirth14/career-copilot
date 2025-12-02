@@ -1,0 +1,71 @@
+skill_name: "AWS (Amazon Web Services)"
+
+definition: |
+  Leading cloud computing platform offering compute, storage, databases, ML services, 
+  and more. AWS is essential for deploying scalable applications, ML models, and data 
+  pipelines. Key services include EC2 (compute), S3 (storage), Lambda (serverless), 
+  RDS (databases), SageMaker (ML), and ECS/EKS (containers). Understanding AWS enables 
+  building cloud-native, scalable, and cost-effective applications.
+
+resume_manifestations:
+  - "Deployed applications to AWS using EC2, S3, and RDS"
+  - "Built serverless applications with AWS Lambda and API Gateway"
+  - "Implemented ML pipelines using AWS SageMaker"
+  - "Architected cloud infrastructure on AWS with IaC (Terraform/CloudFormation)"
+  - "Developed data pipelines using AWS Glue and S3"
+  - "Deployed containerized applications to AWS ECS/EKS"
+  - "Implemented AWS security best practices with IAM and VPC"
+  - "Built real-time data processing with AWS Kinesis"
+  - "Deployed static websites using AWS S3 and CloudFront"
+  - "Implemented monitoring and logging with CloudWatch"
+  - "Built event-driven architectures with AWS EventBridge and SQS"
+  - "Optimized AWS costs through resource management and auto-scaling"
+
+specific_tools:
+  - EC2
+  - S3
+  - Lambda
+  - RDS / Aurora
+  - SageMaker
+  - ECS / EKS
+  - API Gateway
+  - CloudFormation
+  - CloudWatch
+  - IAM
+  - VPC
+  - DynamoDB
+
+related_skills:
+  - Cloud architecture
+  - DevOps
+  - Infrastructure as Code
+  - Serverless
+  - Docker / Kubernetes
+  - CI/CD
+  - Networking
+  - Security
+
+indicators:
+  - "AWS"
+  - "Amazon Web Services"
+  - "EC2"
+  - "S3"
+  - "Lambda"
+  - "cloud"
+  - "SageMaker"
+
+category: "Cloud Platforms"
+
+use_cases:
+  - Application hosting
+  - ML model deployment
+  - Data storage and processing
+  - Serverless applications
+  - Microservices
+  - Static websites
+  - Data lakes
+
+skill_level_indicators:
+  junior: "Used basic AWS services like EC2 and S3"
+  mid: "Deployed production applications with multiple AWS services"
+  senior: "Architected complex cloud infrastructure with security and cost optimization"

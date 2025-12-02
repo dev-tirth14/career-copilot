@@ -1,0 +1,34 @@
+skill_name: "CI/CD (Continuous Integration/Continuous Deployment)"
+
+definition: |
+  Practices and tools for automating software build, test, and deployment processes. 
+  CI/CD enables rapid, reliable software delivery through automated pipelines that test 
+  code changes and deploy to production. Essential for modern software development, 
+  particularly for maintaining quality and velocity in production AI/ML systems.
+
+resume_manifestations:
+  - "Implemented CI/CD pipelines with GitHub Actions for automated testing and deployment"
+  - "Built automated deployment pipelines using Jenkins and ArgoCD"
+  - "Developed GitOps workflows with continuous delivery"
+  - "Created automated testing and linting in CI pipeline"
+  - "Implemented automated Docker image building and publishing"
+  - "Built deployment automation with rollback capabilities"
+  - "Developed automated regression testing in CI/CD"
+
+specific_tools:
+  - GitHub Actions
+  - Jenkins
+  - GitLab CI
+  - ArgoCD
+  - CircleCI
+  - Travis CI
+
+related_skills:
+  - DevOps
+  - Testing
+  - Docker
+  - Kubernetes
+  - Git
+  - Automation
+
+category: "DevOps"

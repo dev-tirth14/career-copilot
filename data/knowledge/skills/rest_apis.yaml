@@ -1,0 +1,36 @@
+skill_name: "REST APIs"
+
+definition: |
+  Architectural style for building web services using HTTP methods (GET, POST, PUT, DELETE). 
+  RESTful APIs are the standard for client-server communication, enabling frontend apps to 
+  interact with backends, microservices to communicate, and third-party integrations. 
+  Understanding REST includes API design, versioning, authentication, rate limiting, and 
+  documentation.
+
+resume_manifestations:
+  - "Designed and implemented RESTful APIs for application backends"
+  - "Built REST API endpoints with authentication and authorization"
+  - "Developed API documentation using OpenAPI/Swagger"
+  - "Implemented rate limiting and caching for API services"
+  - "Created microservices communicating via REST APIs"
+  - "Built public APIs with versioning and deprecation strategies"
+  - "Developed API integration with third-party services"
+  - "Implemented REST API testing and validation"
+
+specific_tools:
+  - FastAPI
+  - Express.js
+  - Flask
+  - Django REST Framework
+  - Postman
+  - Swagger/OpenAPI
+
+related_skills:
+  - HTTP
+  - JSON
+  - API design
+  - Authentication
+  - Backend development
+  - Microservices
+
+category: "Backend Development"

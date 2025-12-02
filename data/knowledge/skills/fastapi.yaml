@@ -1,0 +1,68 @@
+skill_name: "FastAPI"
+
+definition: |
+  Modern, high-performance Python web framework for building APIs with automatic 
+  validation, documentation, and async support. FastAPI is popular for ML/AI services, 
+  microservices, and backend APIs due to its speed, type safety, and developer experience. 
+  Built on Starlette and Pydantic, it provides automatic OpenAPI documentation and is 
+  ideal for serving ML models, LLM applications, and data-intensive services.
+
+resume_manifestations:
+  - "Built REST APIs with FastAPI for ML model serving"
+  - "Developed FastAPI backend for AI-powered applications"
+  - "Implemented microservices architecture using FastAPI"
+  - "Created FastAPI endpoints for LLM inference and chat applications"
+  - "Built asynchronous API services with FastAPI for high throughput"
+  - "Developed FastAPI backend with authentication and authorization"
+  - "Implemented WebSocket endpoints with FastAPI for real-time features"
+  - "Built data processing pipelines exposed via FastAPI endpoints"
+  - "Created FastAPI services with automatic OpenAPI documentation"
+  - "Developed background task processing with FastAPI"
+  - "Implemented rate limiting and caching for FastAPI services"
+  - "Built production API infrastructure using FastAPI and Docker"
+
+specific_tools:
+  - FastAPI
+  - Pydantic
+  - Starlette
+  - Uvicorn
+  - SQLAlchemy
+  - Alembic
+  - Redis (caching)
+  - Celery (background tasks)
+
+related_skills:
+  - Python
+  - REST APIs
+  - Async programming
+  - Pydantic
+  - API design
+  - Microservices
+  - Docker
+  - PostgreSQL
+
+indicators:
+  - "FastAPI"
+  - "fast api"
+  - "REST API"
+  - "API development"
+  - "backend API"
+  - "microservices"
+  - "async Python"
+  - "Pydantic"
+
+category: "Backend Development"
+
+use_cases:
+  - ML model serving
+  - LLM API endpoints
+  - Microservices backends
+  - Data processing APIs
+  - Real-time applications
+  - CRUD applications
+  - Integration services
+
+skill_level_indicators:
+  junior: "Built basic CRUD APIs with FastAPI"
+  mid: "Developed production APIs with authentication, validation, and async processing"
+  senior: "Architected microservices infrastructure with FastAPI at scale"
