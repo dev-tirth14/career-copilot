@@ -29,7 +29,6 @@ ENV/
 
 # UV
 .python-version
-uv.lock
 
 # IDEs
 .vscode/

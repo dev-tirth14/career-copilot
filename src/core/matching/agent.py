@@ -33,43 +33,44 @@ class MatchingAgent:
         # Collect all match results
         results = []
         for job in unprocessed_jobs[:10]:
-            match_result = self.match_job(active_resume, job)
-            results.append({
-                'job': job,
-                'match': match_result
-            })
+            self.match_job(active_resume, job)
+            # match_result = self.match_job(active_resume, job)
+        #     results.append({
+        #         'job': job,
+        #         'match': match_result
+        #     })
 
-        # Sort results by recommendation priority
-        recommendation_order = {
-            'STRONG MATCH': 1,
-            'GOOD MATCH': 2,
-            'MODERATE MATCH': 3,
-            'WEAK MATCH': 4,
-            'POOR MATCH': 5
-        }
+        # # Sort results by recommendation priority
+        # recommendation_order = {
+        #     'STRONG MATCH': 1,
+        #     'GOOD MATCH': 2,
+        #     'MODERATE MATCH': 3,
+        #     'WEAK MATCH': 4,
+        #     'POOR MATCH': 5
+        # }
 
-        sorted_results = sorted(
-            results,
-            key=lambda x: (
-                recommendation_order.get(x['match'].get('recommendation', 'POOR MATCH'), 6),
-                -x['match'].get('total_score', 0)
-            )
-        )
+        # sorted_results = sorted(
+        #     results,
+        #     key=lambda x: (
+        #         recommendation_order.get(x['match'].get('recommendation', 'POOR MATCH'), 6),
+        #         -x['match'].get('total_score', 0)
+        #     )
+        # )
 
-        # Print sorted results
-        print("\n" + "=" * 80)
-        print("SORTED RESULTS (Best to Worst)")
-        print("=" * 80)
-        for i, result in enumerate(sorted_results, 1):
-            job = result['job']
-            match = result['match']
-            print(f"\n{i}. {job.title} at {job.company}")
-            print(f"   Score: {match.get('total_score')}/100 - {match.get('recommendation')}")
-            print(f"   URL: {job.url}")
-            print(f"   Matching Skills: {match.get('matching_skills')}")
-            print(f"   Missing Skills: {match.get('missing_skills')}")
+        # # Print sorted results
+        # print("\n" + "=" * 80)
+        # print("SORTED RESULTS (Best to Worst)")
+        # print("=" * 80)
+        # for i, result in enumerate(sorted_results, 1):
+        #     job = result['job']
+        #     match = result['match']
+        #     print(f"\n{i}. {job.title} at {job.company}")
+        #     print(f"   Score: {match.get('total_score')}/100 - {match.get('recommendation')}")
+        #     print(f"   URL: {job.url}")
+        #     print(f"   Matching Skills: {match.get('matching_skills')}")
+        #     print(f"   Missing Skills: {match.get('missing_skills')}")
 
-        return sorted_results
+        # return sorted_results
 
     def match_job(self, resume:Resume, job:Job):
         return self._llm_match_job(resume, job)
@@ -96,15 +97,16 @@ class MatchingAgent:
         job_key_technologies=job.key_technologies or '',
         skill_context=skill_context
         )
-        start_time = time.perf_counter()
-        try:
-            resp=self.llm.invoke(prompt)
-            resp_obj=json.loads(resp)
-        except Exception as e:
-            print("LLM Inference ERROR")
-            raise Exception(e)
-        end_time = time.perf_counter()
+        print(prompt)
+        # start_time = time.perf_counter()
+        # try:
+        #     resp=self.llm.invoke(prompt)
+        #     resp_obj=json.loads(resp)
+        # except Exception as e:
+        #     print("LLM Inference ERROR")
+        #     raise Exception(e)
+        # end_time = time.perf_counter()
 
-        elapsed_time = end_time - start_time
-        print(f"Processed: {job.title} at {job.company} - Score: {resp_obj.get('total_score')}/100 - {resp_obj.get('recommendation')} ({elapsed_time:.2f}s)")
-        return resp_obj
+        # elapsed_time = end_time - start_time
+        # print(f"Processed: {job.title} at {job.company} - Score: {resp_obj.get('total_score')}/100 - {resp_obj.get('recommendation')} ({elapsed_time:.2f}s)")
+        # return resp_obj

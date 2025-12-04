@@ -55,9 +55,11 @@ job_extraction: |
   - Inferred requirements (if not explicitly stated, don't include it)
   
   RULES FOR key_technologies:
-  - CRITICAL: Extract technologies ONLY from the requirements you captured above
+  - CRITICAL: A technology can ONLY be included if it is EXPLICITLY MENTIONED in the requirements array
+  - Each technology in key_technologies MUST appear as text somewhere in the requirements you extracted
   - DO NOT scan the entire job posting for technologies
   - DO NOT include technologies from job description, company info, or benefits
+  - DO NOT infer or deduce technologies - they must be literally written in the requirements
   - ONLY analyze the requirements array you just extracted
   - List each technology mentioned in those requirements as a separate item
   - Extract individual technologies, NOT grouped
@@ -65,12 +67,15 @@ job_extraction: |
   - RIGHT: "TensorFlow", "PyTorch", "scikit-learn"
   - If "AWS" is mentioned generally in requirements, include "AWS"
   - If specific AWS services are mentioned in requirements, list them individually
+  - If a technology is NOT written in the requirements text, it CANNOT be in key_technologies
 
   EXTRACTION PROCESS:
   1. Look at each requirement you extracted
-  2. Identify any technology, tool, framework, language, or platform mentioned
-  3. Add it to key_technologies as an individual item
-  4. DO NOT add technologies from anywhere else in the posting
+  2. Identify any technology, tool, framework, language, or platform that is LITERALLY MENTIONED
+  3. Verify the technology name appears as text in at least one requirement
+  4. Add it to key_technologies as an individual item
+  5. DO NOT add technologies from anywhere else in the posting
+  6. DO NOT add technologies that are implied but not explicitly stated
   
   ANTI-HALLUCINATION CHECKLIST:
   Before including ANY item, verify:

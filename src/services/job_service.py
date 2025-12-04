@@ -26,7 +26,11 @@ class JobsManager:
                 if(self.db_manager.does_job_exist(job_id=job.get("job_id"))):
                     continue
                 # MAKE LLM CALL TO PARSE JOB DETAILS FOR DESCRIPTION AND REQUIREMENTS
-                self._llm_parse_job(job=job)
+                try:
+                    self._llm_parse_job(job=job)
+                except Exception as e:
+                    print(f"LLM PARSING FAILED FOR JOB {job.get('url')} BECAUSE: {e}")
+                    continue
                 # print(job)
                 # BUILD AND SAVE JOB POSTING
                 self.db_manager.add_job_posting(job_details=job)
@@ -54,7 +58,6 @@ class JobsManager:
                 if (key not in resp_obj):
                     raise(Exception("INVALID LLM RESPONSE"))
         except Exception as e:
-            print("LLM Inference ERROR")
             raise Exception(e)
         end_time = time.perf_counter()
 
